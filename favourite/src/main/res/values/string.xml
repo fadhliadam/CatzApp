@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="no_favourite_cat_found">No Favourite Cat Found</string>
+    <string name="confused_cat">confused cat</string>
+</resources>
