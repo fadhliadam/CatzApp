@@ -2,25 +2,16 @@
     <string name="app_name">Catz App</string>
     <string name="title_favourite">Favourite</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Catz App</string>
     <string name="nav_header_subtitle">all about cats</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
     <string name="something_wrong">Oops… Something Wrong…</string>
-    <string name="prev_button_slide">Previous Button Slide</string>
-    <string name="next_button_slide">Next Button Slide</string>
-    <string name="item_title">Item Title</string>
     <string name="description">Description</string>
     <string name="breed_name">Breed Name</string>
     <string name="origin">Origin</string>
     <string name="stats">Stats</string>
-    <string name="flag">Flag</string>
     <string name="adaptability">Adaptability</string>
     <string name="energy_level">Energy Level</string>
     <string name="child_friendly">Child Friend</string>

@@ -20,6 +20,11 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    lintOptions {
+        disable 'NotificationPermission','TypographyFractions','TypographyQuotes'
+
+    }
+
     buildTypes {
         release {
             minifyEnabled false

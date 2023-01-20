@@ -2,6 +2,7 @@ package com.adam.core.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.adam.core.databinding.ItemCatImageBinding
 import com.adam.core.domain.model.Cat
@@ -21,9 +22,11 @@ class CatImageAdapter: RecyclerView.Adapter<CatImageAdapter.ListViewHolder>() {
 
     fun setData(data: List<Cat>?){
         if (data == null) return
+        val diffCallback = CatDiffCallback(listData, data)
+        val diffResult = DiffUtil.calculateDiff(diffCallback)
         listData.clear()
         listData.addAll(data)
-        notifyDataSetChanged()
+        diffResult.dispatchUpdatesTo(this)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
