@@ -5,5 +5,7 @@ import androidx.lifecycle.asLiveData
 import com.adam.core.domain.usecase.CatUseCase
 
 class HomeViewModel(catUseCase: CatUseCase) : ViewModel() {
-    val breed = catUseCase.getAllBreed().asLiveData()
+    val breed by lazy {
+        catUseCase.getAllBreed().asLiveData()
+    }
 }
