@@ -1,2 +1,2 @@
 # CatzApp
-[![fadhliadam](https://circleci.com/gh/fadhliadam/CatzApp.svg?style=svg)](https://circleci.com/gh/fadhliadam/CatzApp)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/fadhliadam/CatzApp/tree/circleci-project-setup.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/fadhliadam/CatzApp/tree/circleci-project-setup)
