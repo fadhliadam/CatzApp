@@ -1,13 +1,14 @@
 version: 2.1
  
 orbs:
+  android: circleci/android@2.1.2
   snyk: snyk/snyk@1.4.0
  
 jobs:
   build:
-    docker: 
-        - image: 'cimg/node:lts'
-        - image: cimg/android:2022.12
+    executor: 
+        name: android/android-machine
+        tag: 2022.12.1
     steps:
         - checkout
         - restore_cache:
@@ -29,7 +30,6 @@ jobs:
         - store_artifacts: 
             path: app/build/reports
             destination: reports
-        - snyk/scan
         - run:
             name: Run Tests
             command: ./gradlew lint test
@@ -38,3 +38,7 @@ jobs:
         - store_artifacts:  
             path: app/build/outputs/apk/debug/
             destination: artifact-file
+        - snyk/scan:
+            project: '${CatzApp}/${circle-project-setup}-app'
+            severity-threshold: high
+            token-variable: SNYK_TOKEN
