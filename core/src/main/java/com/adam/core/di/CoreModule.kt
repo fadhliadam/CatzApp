@@ -9,6 +9,8 @@ import com.adam.core.data.source.remote.RemoteDataSource
 import com.adam.core.data.source.remote.network.ApiService
 import com.adam.core.domain.repository.ICatRepository
 import com.adam.core.utils.AppExecutors
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -20,10 +22,14 @@ import java.util.concurrent.TimeUnit
 val databaseModule = module {
     factory { get<CatDatabase>().breedDao() }
     single {
+        val passphrase: ByteArray = SQLiteDatabase.getBytes("AdamTampanTiadaDuanya".toCharArray())
+        val factory = SupportFactory(passphrase)
         Room.databaseBuilder(
             androidContext(),
             CatDatabase::class.java, "Cat.db"
-        ).fallbackToDestructiveMigration().build()
+        ).fallbackToDestructiveMigration()
+            .openHelperFactory(factory)
+            .build()
     }
 }
 
