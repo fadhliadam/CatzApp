@@ -12,6 +12,7 @@ class CatInteractor(private val catRepository: ICatRepository): CatUseCase {
     override fun getCatImageBreed(breedsId: String): Flow<Resource<List<Cat>>> = catRepository.getCatImageBreed(breedsId)
 
     override fun getFavoriteCat(): Flow<List<Breed>> = catRepository.getFavoriteCat()
+    override fun getRandomCatImage(): Flow<Resource<List<Cat>>> = catRepository.getRandomCatImage()
 
     override fun setCatBreedId(cat: List<Cat>?, breedsId: String) = catRepository.setCatBreedId(cat, breedsId)
 

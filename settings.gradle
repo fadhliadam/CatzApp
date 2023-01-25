@@ -17,3 +17,4 @@ rootProject.name = "Catz App"
 include ':app'
 include ':core'
 include ':favourite'
+include ':randomimage'

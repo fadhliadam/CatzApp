@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/cat_stand"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:contentDescription="@string/cat_stand"
+        android:cropToPadding="true"
+        android:src="@drawable/cat_stand"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:text="@string/something_wrong"
+        android:textAlignment="center"
+        android:layout_marginTop="8dp"
+        android:textColor="?colorOnSecondary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/cat_stand"
+        app:layout_constraintEnd_toEndOf="@id/cat_stand"
+        app:layout_constraintStart_toStartOf="@id/cat_stand" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

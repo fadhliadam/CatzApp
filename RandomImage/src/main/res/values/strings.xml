@@ -1,0 +1,5 @@
+<resources>
+    <string name="find_another_cat">find another cat</string>
+    <string name="cat_image">Cat Image</string>
+    <string name="find_cat">find cat</string>
+</resources>

@@ -53,4 +53,20 @@ class HomeViewModelTest{
         assertTrue(actualListBreed is Resource.Success)
         assertEquals(dummyListBreed, (actualListBreed as Resource.Success).data)
     }
+
+    @Test
+    fun `when Get All Breed Network Error Should Return Error`() = runTest {
+        `when`(catUseCase.getAllBreed())
+            .thenReturn(flowOf(Resource.Error(ERROR_MSG)))
+
+        val actualListBreed = homeViewModel.breed.getOrAwaitValue()
+        Mockito.verify(catRepository).getAllBreed()
+        assertNotNull(actualListBreed)
+        assertTrue(actualListBreed is Resource.Error)
+        assertEquals(ERROR_MSG, (actualListBreed as Resource.Error).message)
+    }
+
+    private companion object {
+        const val ERROR_MSG = "Error"
+    }
 }

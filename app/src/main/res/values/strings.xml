@@ -1,6 +1,5 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Catz App</string>
-    <string name="title_favourite">Favourite</string>
     <string name="nav_header_title">Catz App</string>
     <string name="nav_header_subtitle">all about cats</string>
     <string name="nav_header_desc">Navigation header</string>
@@ -25,4 +24,7 @@
     <string name="favourite">Favourite</string>
     <string name="cat_stand">Cat Stand</string>
     <string name="favourite_button">Favourite Button</string>
+    <string name="random_cat_image">Random Cat Image</string>
+    <string name="title_randomimage" tools:keep="@string/title_randomimage">Random Image</string>
+    <string name="title_favourite" tools:keep="@string/title_favourite">Favourite</string>
 </resources>

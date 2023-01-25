@@ -9,6 +9,10 @@
             android:icon="@drawable/baseline_pets_24"
             android:title="@string/menu_home" />
         <item
+            android:id="@+id/nav_randomimage"
+            android:icon="@drawable/baseline_question_mark_24"
+            android:title="@string/random_cat_image"/>
+        <item
             android:id="@+id/nav_favourite"
             android:icon="@drawable/baseline_favorite_24"
             android:title="@string/favourite" />

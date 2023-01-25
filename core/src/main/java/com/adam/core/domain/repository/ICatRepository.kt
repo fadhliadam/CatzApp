@@ -12,6 +12,8 @@ interface ICatRepository {
 
     fun getFavoriteCat(): Flow<List<Breed>>
 
+    fun getRandomCatImage(): Flow<Resource<List<Cat>>>
+
     fun setCatBreedId(cat: List<Cat>?, breedsId: String)
 
     fun setFavoriteCat(cat: Breed, state: Boolean)

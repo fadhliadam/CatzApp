@@ -7,7 +7,7 @@ plugins {
 apply from: '../shared_dependencies.gradle'
 
 android {
-    dynamicFeatures = [':favourite']
+    dynamicFeatures = [':favourite', ':randomimage']
     namespace 'com.adam.catzapp'
     compileSdk 33
 
@@ -16,12 +16,14 @@ android {
         minSdk 21
         targetSdk 33
         versionCode 1
-        versionName "1.0"
+        versionName "1.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     lintOptions {
-        disable 'NotificationPermission','TypographyFractions','TypographyQuotes'
+        disable 'NotificationPermission','TypographyFractions','TypographyQuotes',
+                'MonochromeLauncherIcon', 'IconLocation'
+
 
     }
 
