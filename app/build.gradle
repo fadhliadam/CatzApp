@@ -22,7 +22,7 @@ android {
 
     lintOptions {
         disable 'NotificationPermission','TypographyFractions','TypographyQuotes',
-                'MonochromeLauncherIcon', 'IconLocation'
+                'MonochromeLauncherIcon'
 
 
     }
