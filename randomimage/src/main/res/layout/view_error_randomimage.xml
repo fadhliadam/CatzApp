@@ -10,7 +10,7 @@
         android:layout_height="180dp"
         android:contentDescription="@string/cat_stand"
         android:cropToPadding="true"
-        android:src="@drawable/cat_stand"
+        android:src="@drawable/cat_stand_randomimage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
