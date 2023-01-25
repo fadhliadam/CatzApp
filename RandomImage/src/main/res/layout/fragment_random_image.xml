@@ -15,8 +15,8 @@
         android:visibility="gone"/>
 
     <include
-        android:id="@+id/view_error"
-        layout="@layout/view_error"
+        android:id="@+id/view_error_randomimage"
+        layout="@layout/view_error_randomimage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"

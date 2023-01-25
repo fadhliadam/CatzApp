@@ -1,6 +1,7 @@
 package com.adam.core.data.source.remote
 
 import android.util.Log
+import com.adam.core.BuildConfig
 import com.adam.core.data.source.remote.network.ApiResponse
 import com.adam.core.data.source.remote.network.ApiService
 import com.adam.core.data.source.remote.response.BreedsResponseItem
@@ -11,7 +12,7 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 
 class RemoteDataSource(private val apiService: ApiService) {
-    private val apiKey = "live_cb2ttchmOrddbkp0nw77CXYJPQ5QoQGPWd3K6shHRanvcARX61jRBEujWhc7jWVo"
+    private val apiKey = BuildConfig.APIKEY
 
     suspend fun getBreeds(): Flow<ApiResponse<List<BreedsResponseItem>>> {
         return flow {

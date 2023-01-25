@@ -36,7 +36,7 @@ class RandomImageFragment : Fragment() {
                         when(catImage){
                             is Resource.Success -> {
                                 binding.progressBar.visibility = View.GONE
-                                binding.viewError.root.visibility = View.GONE
+                                binding.viewErrorRandomimage.root.visibility = View.GONE
                                 binding.ivCat.visibility = View.VISIBLE
                                 Glide.with(view)
                                     .load(catImage.data?.random()?.url)
@@ -45,13 +45,13 @@ class RandomImageFragment : Fragment() {
                             }
                             is Resource.Loading -> {
                                 binding.ivCat.visibility = View.GONE
-                                binding.viewError.root.visibility = View.GONE
+                                binding.viewErrorRandomimage.root.visibility = View.GONE
                                 binding.progressBar.visibility = View.VISIBLE
                             }
                             is Resource.Error -> {
                                 binding.progressBar.visibility = View.GONE
                                 binding.ivCat.visibility = View.GONE
-                                binding.viewError.root.visibility = View.VISIBLE
+                                binding.viewErrorRandomimage.root.visibility = View.VISIBLE
                             }
                         }
                     }
