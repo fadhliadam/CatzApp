@@ -2,6 +2,7 @@ package com.adam.core.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.adam.core.databinding.ItemListCatsBinding
 import com.adam.core.domain.model.Breed
@@ -29,9 +30,11 @@ class BreedsAdapter : RecyclerView.Adapter<BreedsAdapter.ListViewHolder>() {
 
     fun setData(newListData: List<Breed>?) {
         if (newListData == null) return
+        val diffCallback = BreedDiffCallback(listData, newListData)
+        val diffResult = DiffUtil.calculateDiff(diffCallback)
         listData.clear()
         listData.addAll(newListData)
-        notifyDataSetChanged()
+        diffResult.dispatchUpdatesTo(this)
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {

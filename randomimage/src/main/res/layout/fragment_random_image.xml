@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RandomImageFragment"
+    android:orientation="vertical"
+    android:gravity="center_vertical">
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+    <include
+        android:id="@+id/view_error_randomimage"
+        layout="@layout/view_error_randomimage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="center"/>
+
+    <ImageView
+        android:visibility="visible"
+        android:id="@+id/iv_cat"
+        android:layout_width="320dp"
+        android:layout_height="320dp"
+        android:src="@drawable/cat_magnifying_glass"
+        android:layout_gravity="center"
+        android:contentDescription="@string/cat_image" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp"/>
+
+    <Button
+        android:id="@+id/btn_random"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/find_cat"
+        android:layout_gravity="center"/>
+
+</LinearLayout>

@@ -1,6 +1,7 @@
 package com.adam.core.data.source.remote
 
 import android.util.Log
+import com.adam.core.BuildConfig
 import com.adam.core.data.source.remote.network.ApiResponse
 import com.adam.core.data.source.remote.network.ApiService
 import com.adam.core.data.source.remote.response.BreedsResponseItem
@@ -11,7 +12,7 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 
 class RemoteDataSource(private val apiService: ApiService) {
-    private val apiKey = "live_cb2ttchmOrddbkp0nw77CXYJPQ5QoQGPWd3K6shHRanvcARX61jRBEujWhc7jWVo"
+    private val apiKey = BuildConfig.APIKEY
 
     suspend fun getBreeds(): Flow<ApiResponse<List<BreedsResponseItem>>> {
         return flow {
@@ -33,6 +34,22 @@ class RemoteDataSource(private val apiService: ApiService) {
         return flow{
             try{
                 val response = apiService.getCatImage(apiKey,10,breedsId)
+                if(response.isNotEmpty()){
+                    emit(ApiResponse.Success(response))
+                }else{
+                    emit(ApiResponse.Empty)
+                }
+            }catch (e: Exception){
+                emit(ApiResponse.Error(e.toString()))
+                Log.e("RemoteDataSource", e.toString())
+            }
+        }.flowOn(Dispatchers.IO)
+    }
+
+    suspend fun getRandomCatImage(): Flow<ApiResponse<List<ListCatResponseItem>>>{
+        return flow{
+            try{
+                val response = apiService.getRandomCatImage()
                 if(response.isNotEmpty()){
                     emit(ApiResponse.Success(response))
                 }else{

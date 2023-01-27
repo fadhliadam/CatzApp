@@ -64,6 +64,25 @@ class CatRepository(
         }
     }
 
+    override fun getRandomCatImage(): Flow<Resource<List<Cat>>> =
+        object : NetworkBoundResource<List<Cat>, List<ListCatResponseItem>>(){
+            override fun loadFromDB(): Flow<List<Cat>> {
+                return localDataSource.getRandomCatImage().map{
+                    DataMapper.mapCatEntitiesToDomain(it)
+                }
+            }
+
+            override suspend fun createCall(): Flow<ApiResponse<List<ListCatResponseItem>>> =
+                remoteDataSource.getRandomCatImage()
+
+            override suspend fun saveCallResult(data: List<ListCatResponseItem>) {
+                val catImageList = DataMapper.mapCatResponsesToEntities(data)
+                localDataSource.insertCat(catImageList)
+            }
+
+            override fun shouldFetch(data: List<Cat>?): Boolean = true
+        }.asFlow()
+
     override fun setCatBreedId(cat: List<Cat>?, breedsId: String) {
         val catEntity = DataMapper.mapCatDomainToEntity(cat)
         appExecutors.diskIO().execute{

@@ -19,6 +19,9 @@ interface BreedDao {
     @Query("SELECT * FROM cat where breedsId = :breedsId")
     fun getCatImageBreed(breedsId: String): Flow<List<CatEntity>>
 
+    @Query("Select * FROM cat")
+    fun getRandomCatImage(): Flow<List<CatEntity>>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCat(cat: List<CatEntity>)
 

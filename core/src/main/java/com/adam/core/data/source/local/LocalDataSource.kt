@@ -12,6 +12,8 @@ class LocalDataSource(private val breedDao: BreedDao) {
 
     fun getCatImageBreed(breedsId: String): Flow<List<CatEntity>> = breedDao.getCatImageBreed(breedsId)
 
+    fun getRandomCatImage(): Flow<List<CatEntity>> = breedDao.getRandomCatImage()
+
     suspend fun insertBreed(breedList: List<BreedEntity>) = breedDao.insertBreed(breedList)
 
     suspend fun insertCat(catList: List<CatEntity>) = breedDao.insertCat(catList)

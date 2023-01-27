@@ -17,4 +17,7 @@ interface ApiService {
         @Query("limit") limit: Int,
         @Query("breed_ids") breedsId: String,
     ): List<ListCatResponseItem>
+
+    @GET("images/search")
+    suspend fun getRandomCatImage(): List<ListCatResponseItem>
 }

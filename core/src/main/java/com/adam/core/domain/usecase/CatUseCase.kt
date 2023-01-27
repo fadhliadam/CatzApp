@@ -9,6 +9,7 @@ interface CatUseCase {
     fun getAllBreed(): Flow<Resource<List<Breed>>>
     fun getCatImageBreed(breedsId: String): Flow<Resource<List<Cat>>>
     fun getFavoriteCat(): Flow<List<Breed>>
+    fun getRandomCatImage(): Flow<Resource<List<Cat>>>
     fun setCatBreedId(cat: List<Cat>?, breedsId: String)
     fun setFavoriteCat(cat: Breed, state: Boolean)
 }
